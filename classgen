@@ -28,15 +28,15 @@ then
 	then
 		echo "Class Name : " $CLASS
 		echo "*******************************************************"
-		/usr/bin/touch $CLASS.cpp $CLASS.hpp 
+		/usr/bin/mkdir includes
 
 		#	***		Printing To Class.hpp	***
 
-		echo "#ifndef _"$CLASS"_HPP_" >> $CLASS.hpp
-		echo "#define _"$CLASS"_HPP_" >> $CLASS.hpp
-		printf "\n" >> $CLASS.hpp
-		echo "#include <iostream>" >> $CLASS.hpp
-		printf "\n" >> $CLASS.hpp
+		echo "#ifndef _"$CLASS"_HPP_" >> includes/$CLASS.hpp
+		echo "#define _"$CLASS"_HPP_" >> includes/$CLASS.hpp
+		printf "\n" >> includes/$CLASS.hpp
+		echo "#include <iostream>" >> includes/$CLASS.hpp
+		printf "\n" >> includes/$CLASS.hpp
 		printf "\nclass	$CLASS {
 	public:
 		$CLASS();
@@ -45,10 +45,8 @@ then
 		$CLASS &operator=(const $CLASS &obj);
 
 	private:
-};\n\n" >> $CLASS.hpp
-
-		echo "#endif" >> $CLASS.hpp
-
+};\n\n" >> includes/$CLASS.hpp
+echo "#endif" >> includes/$CLASS.hpp
 		#	***		Printing To Class.cpp	***
 
 		printf "#include \"$CLASS.hpp\"
