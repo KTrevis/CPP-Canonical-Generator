@@ -28,7 +28,8 @@ then
 	then
 		echo "Class Name : " $CLASS
 		echo "*******************************************************"
-		/usr/bin/mkdir includes
+		/bin/mkdir -p includes
+		/bin/mkdir -p srcs
 
 		#	***		Printing To Class.hpp	***
 
