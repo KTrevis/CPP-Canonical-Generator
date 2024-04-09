@@ -72,7 +72,7 @@ $CLASS	&$CLASS::operator= (const $CLASS &obj) {
 		//	...
 	}
 	return (*this);
-}\n" > $CLASS.cpp
+}\n" > srcs/$CLASS.cpp
 		echo -e "\x1b[32m> "$CLASS": Files Created !\033[m\n"
 	else
 		echo -e "______________________________________\n"
