@@ -61,13 +61,13 @@ $CLASS::~$CLASS() {
 }
 
 $CLASS::$CLASS($CLASS const &obj) {
-	std::cout << \"Copy Constructor Called\" << std::endl;
+	std::cout << \"$CLASS : Copy Constructor Called\" << std::endl;
 	if (this != &obj)
 		*this = obj;
 }
 
 $CLASS	&$CLASS::operator= (const $CLASS &obj) {
-	std::cout << \"Copy Assignment Operator Called\" << std::endl;
+	std::cout << \"$CLASS : Copy Assignment Operator Called\" << std::endl;
 	if (this != &obj) {
 		//	this->attributes = obj.attributes;
 		//	...
