@@ -68,10 +68,8 @@ $CLASS::$CLASS($CLASS const &obj) {
 
 $CLASS	&$CLASS::operator= (const $CLASS &obj) {
 	std::cout << \"$CLASS : Copy Assignment Operator Called\" << std::endl;
-	if (this != &obj) {
-		//	this->attributes = obj.attributes;
-		//	...
-	}
+	if (this == &obj)
+		return *this;
 	return (*this);
 }\n" > srcs/$CLASS.cpp
 		echo -e "\x1b[32m> "$CLASS": Files Created !\033[m\n"
