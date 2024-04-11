@@ -8,28 +8,18 @@ echo -n "Current Directory : "
 pwd
 
 #Variables
-PATH=""
 CLASS=""
 OPTION=""
 
-#PATH
 echo "*******************************************************"
-echo -ne "\x1b[33mEnter Path Of Creation : \033[m"
-read PATH
-
-if [ -d $PATH ] &> /dev/null
-then 
-	cd $PATH
-	echo "Changing Directory to : " $PATH
+echo -ne "\x1b[33mEnter Class Name : \033[m"
+read CLASS
+if [ $CLASS != "" ] 2> /dev/null
+then
+	echo "Class Name : " $CLASS
 	echo "*******************************************************"
-	echo -ne "\x1b[33mEnter Class Name : \033[m"
-	read CLASS
-	if [ $CLASS != "" ] 2> /dev/null
-	then
-		echo "Class Name : " $CLASS
-		echo "*******************************************************"
-		/bin/mkdir -p includes
-		/bin/mkdir -p srcs
+	/bin/mkdir -p includes
+	/bin/mkdir -p srcs
 
 		#	***		Printing To Class.hpp	***
 
@@ -39,45 +29,41 @@ then
 		echo "#include <iostream>" >> includes/$CLASS.hpp
 		printf "\n" >> includes/$CLASS.hpp
 		printf "\nclass	$CLASS {
-	public:
+		public:
 		$CLASS();
 		$CLASS($CLASS const &obj);
 		~$CLASS();
 		$CLASS &operator=(const $CLASS &obj);
 
-	private:
-};\n\n" >> includes/$CLASS.hpp
-echo "#endif" >> includes/$CLASS.hpp
-		#	***		Printing To Class.cpp	***
+		private:
+	};\n\n" >> includes/$CLASS.hpp
+	echo "#endif" >> includes/$CLASS.hpp
+	#	***		Printing To Class.cpp	***
 
-		printf "#include \"$CLASS.hpp\"
+	printf "#include \"$CLASS.hpp\"
 
-$CLASS::$CLASS() {
+	$CLASS::$CLASS() {
 	std::cout << \"$CLASS : Default Constructor Called\" << std::endl;
 }
 
 $CLASS::~$CLASS() {
-	std::cout << \"$CLASS : Destructor Called\" << std::endl;
+std::cout << \"$CLASS : Destructor Called\" << std::endl;
 }
 
 $CLASS::$CLASS($CLASS const &obj) {
-	std::cout << \"$CLASS : Copy Constructor Called\" << std::endl;
-	if (this != &obj)
-		*this = obj;
+std::cout << \"$CLASS : Copy Constructor Called\" << std::endl;
+if (this != &obj)
+	*this = obj;
 }
 
 $CLASS	&$CLASS::operator= (const $CLASS &obj) {
-	std::cout << \"$CLASS : Copy Assignment Operator Called\" << std::endl;
-	if (this == &obj)
-		return *this;
+std::cout << \"$CLASS : Copy Assignment Operator Called\" << std::endl;
+if (this == &obj)
+	return *this;
 	return (*this);
 }\n" > srcs/$CLASS.cpp
-		echo -e "\x1b[32m> "$CLASS": Files Created !\033[m\n"
-	else
-		echo -e "______________________________________\n"
-		echo -e "\x1b[31mNo Class Name Entred\033[m\n"
-	fi
-	else
-		echo -e "______________________________________\n"
-		echo -e "\x1b[31m*** $PATH : ** Path not found !! **\033[m\n"
+echo -e "\x1b[32m> "$CLASS": Files Created !\033[m\n"
+else
+	echo -e "______________________________________\n"
+	echo -e "\x1b[31mNo Class Name Entred\033[m\n"
 fi
