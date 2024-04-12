@@ -29,14 +29,14 @@ then
 		echo "#include <iostream>" >> includes/$CLASS.hpp
 		printf "\n" >> includes/$CLASS.hpp
 		printf "\nclass	$CLASS {
-		public:
+	public:
 		$CLASS();
 		$CLASS($CLASS const &obj);
 		~$CLASS();
 		$CLASS &operator=(const $CLASS &obj);
 
-		private:
-	};\n\n" >> includes/$CLASS.hpp
+	private:
+};\n\n" >> includes/$CLASS.hpp
 	echo "#endif" >> includes/$CLASS.hpp
 	#	***		Printing To Class.cpp	***
 
