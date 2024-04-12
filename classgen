@@ -45,19 +45,19 @@ $CLASS::$CLASS() {
 }
 
 $CLASS::~$CLASS() {
-std::cout << \"$CLASS : Destructor Called\" << std::endl;
+	std::cout << \"$CLASS : Destructor Called\" << std::endl;
 }
 
 $CLASS::$CLASS($CLASS const &obj) {
-std::cout << \"$CLASS : Copy Constructor Called\" << std::endl;
-if (this != &obj)
-	*this = obj;
+	std::cout << \"$CLASS : Copy Constructor Called\" << std::endl;
+	if (this != &obj)
+		*this = obj;
 }
 
 $CLASS	&$CLASS::operator= (const $CLASS &obj) {
-std::cout << \"$CLASS : Copy Assignment Operator Called\" << std::endl;
-if (this == &obj)
-	return *this;
+	std::cout << \"$CLASS : Copy Assignment Operator Called\" << std::endl;
+	if (this == &obj)
+		return *this;
 	return (*this);
 }\n" > srcs/$CLASS.cpp
 echo -e "\x1b[32m> "$CLASS": Files Created !\033[m\n"
