@@ -34,8 +34,6 @@ then
 		$CLASS($CLASS const &obj);
 		~$CLASS();
 		$CLASS &operator=(const $CLASS &obj);
-
-	private:
 };\n\n" >> includes/$CLASS.hpp
 	echo "#endif" >> includes/$CLASS.hpp
 	#	***		Printing To Class.cpp	***
