@@ -28,7 +28,7 @@ then
 		printf "\n" >> includes/$CLASS.hpp
 		echo "#include <iostream>" >> includes/$CLASS.hpp
 		printf "\n" >> includes/$CLASS.hpp
-		printf "\nclass	$CLASS {
+		printf "\nclass $CLASS {
 	public:
 		$CLASS();
 		$CLASS($CLASS const &obj);
