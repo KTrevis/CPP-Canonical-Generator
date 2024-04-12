@@ -22,13 +22,12 @@ then
 	/bin/mkdir -p srcs
 
 		#	***		Printing To Class.hpp	***
-
 		echo "#ifndef _"$CLASS"_HPP_" >> includes/$CLASS.hpp
 		echo "#define _"$CLASS"_HPP_" >> includes/$CLASS.hpp
 		printf "\n" >> includes/$CLASS.hpp
 		echo "#include <iostream>" >> includes/$CLASS.hpp
 		printf "\n" >> includes/$CLASS.hpp
-		printf "\nclass $CLASS {
+		printf "class $CLASS {
 	public:
 		$CLASS();
 		$CLASS($CLASS const &obj);
