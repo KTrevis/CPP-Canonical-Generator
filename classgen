@@ -53,7 +53,7 @@ $CLASS::$CLASS($CLASS const &obj) {
 		*this = obj;
 }
 
-$CLASS	&$CLASS::operator= (const $CLASS &obj) {
+$CLASS	&$CLASS::operator=(const $CLASS &obj) {
 	std::cout << \"$CLASS : Copy Assignment Operator Called\" << std::endl;
 	if (this == &obj)
 		return *this;
